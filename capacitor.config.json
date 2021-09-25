@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "busPassenger",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}
