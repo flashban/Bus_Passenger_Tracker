@@ -233,4 +233,12 @@ http://ionicframework.com/docs/theming/ */
 
     --ion-card-background: #1e1e1e;
   }
+
+  .BusLogo{
+    width: 17rem;
+    height: 20rem;
+    object-fit: contain;
+    padding: 1rem;
+    margin: auto;
+  }
 }
