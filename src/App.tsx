@@ -45,13 +45,42 @@ const App: React.FC = () => {
   const passengerIn = useRef<HTMLIonInputElement>(null);
   const passengerOut = useRef<HTMLIonInputElement>(null);
   const travellers: number[][] = [];
-
+ 
+ const number = (busStops: any[]) =>
+      busStops.reduce((rem, [on, off]) => rem + on - off, 0);
+	  
   const addTravellers = () => {
     const passIn = +passengerIn.current!.value!;
     const passOut = +passengerOut.current!.value!;
+	  
+	/*** SURYA CODE ***/
+	//const array=[];
+
+//function submit()
+//{
+  if(passIn==0){
+    travellers.push(passIn);
+    console.log(travellers);
+  }
+	else
+  {
+  travellers.push(passIn);
+  let result = travellers.map(i=>Number(i));
+console.log(result);
+  var array_reduce=result.reduce((a, b) => a + b, 0);
+  console.log(result.reduce((a, b) => a + b, 0));
+  var end_result = array_reduce - passOut;
+  travellers=[];
+  console.log('End Result: '+ end_result);
+  array.push(end_result);
+  }
+//}
+	/******************/
+	
     travellers.push([passIn, passOut]);
-    const number = (busStops: any[]) =>
-      busStops.reduce((rem, [on, off]) => rem + on - off, 0);
+	console.log(travellers);
+    //const number = (busStops: any[]) =>
+    //  busStops.reduce((rem, [on, off]) => rem + on - off, 0);
     console.log(number(travellers));
     setFinal(number(travellers));
   };
